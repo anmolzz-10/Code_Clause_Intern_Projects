@@ -1,1 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
 
+            <div class="form-group">
+                <label for="sex">Gender:</label>
+                <select id="sex" name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="cp">Chest Pain Type:</label>
+                <select id="cp" name="cp">
+                    <option value="typical">Typical angina</option>
+                    <option value="atypical">Atypical angina</option>
+                    <option value="non-anginal">Non-anginal pain</option>
+                    <option value="asymptomatic">Asymptomatic</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="trestbps">Resting Blood Pressure (mm Hg):</label>
+                <input type="number" id="trestbps" name="trestbps" required>
+            </div>
+
+            <div class="form-group">
+                <label for="chol">Serum Cholesterol (mg/dL):</label>
+                <input type="number" id="chol" name="chol" required>
+            </div>
+
+            <div class="form-group">
+                <label for="fbs">Fasting Blood Sugar (&gt;120 mg/dL):</label>
+                <select id="fbs" name="fbs">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="restecg">Resting Electrocardiographic Results:</label>
+                <select id="restecg" name="restecg">
+                    <option value="normal">Normal</option>
+                    <option value="stt_wave_abnormality">ST-T Wave Abnormality</option>
+                    <option value="left_ventricular_hypertrophy">Probable or Definite Left Ventricular Hypertrophy</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="thalach">Maximum Heart Rate Achieved:</label>
+                <input type="number" id="thalach" name="thalach" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exang">Exercise-Induced Angina:</label>
+                <select id="exang" name="exang">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="oldpeak">ST Depression Induced by Exercise:</label>
+                <input type="number" id="oldpeak" name="oldpeak" required>
+            </div>
+
+            <div class="form-group">
+                <label for="slope">Slope of the Peak Exercise ST Segment:</label>
+                <select id="slope" name="slope">
+                    <option value="upsloping">Upsloping</option>
+                    <option value="flat">Flat</option>
+                    <option value="downsloping">Downsloping</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ca">Number of Major Vessels Colored by Fluoroscopy:</label>
+                <input type="number" id="ca" name="ca" min="0" max="4" required>
+            </div>
+
+            <div class="form-group">
+                <label for="thal">Thalium Stress Test Result:</label>
+                <select id="thal" name="thal">
+                    <option value="normal">Normal</option>
+                    <option value="fixed_defect">Fixed Defect</option>
+                    <option value="reversible_defect">Reversible Defect</option>
+                    <option value="critical">Critical</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Predict" class="btn">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

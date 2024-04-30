@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='result/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        <div class="result" style="color: {{ 'green' if prediction == 0 else 'red' }}">
+            <h2>The predicted heart disease status is: {{ 'No Disease' if prediction == 0 else 'Disease Detected' }}</h2>
+        </div>
+        <a href="/" class="btn">Go Back</a>
+    </div>
+</body>
+</html>
